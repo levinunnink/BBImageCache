@@ -15,7 +15,11 @@
 - (void)clearCache;
 - (BOOL)synchronizeCache;
 - (NSUInteger)purgeStaleData;
+#if TARGET_OS_IPHONE
 - (BOOL)storeImage:(UIImage*)image forKey:(NSString*)key;
 - (UIImage*)imageForKey:(NSString*)key;
-
+#elif TARGET_OS_OSX
+- (BOOL)storeImage:(NSImage*)image forKey:(NSString*)key;
+- (NSImage*)imageForKey:(NSString*)key;
+#endif
 @end

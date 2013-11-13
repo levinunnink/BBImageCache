@@ -14,7 +14,10 @@
 #pragma mark Public properties
 
 @property(nonatomic, retain) NSString* key;
+#if TARGET_OS_IPHONE
 @property(nonatomic, retain) UIImage*  image;
+#elif TARGET_OS_OSX
+@property(nonatomic, retain) NSImage*  image;
+#endif
 @property(nonatomic, retain) NSDate*   expiration;
-
 @end
